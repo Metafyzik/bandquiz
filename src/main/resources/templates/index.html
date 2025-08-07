@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+    <head>
+        <title>BANDquiz!</title>
+    </head>
+
+    <body>
+    <h1>BANDquiz!</h1>
+
+    <div id="main-div">
+        <div th:insert="~{fragments/search-area :: search-area}"></div>
+
+    </div>
+    <div id="error-message"></div>
+
+    </body>
+
+    <script th:src="@{/javascript/script.js}" ></script>
+    <link rel="stylesheet"  th:href="@{/css/styles.css}" type="text/css">
+</html>

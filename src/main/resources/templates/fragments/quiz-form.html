@@ -1,0 +1,26 @@
+
+<!-- This is a reusable fragment -->
+<div th:fragment="quizForm">
+    <form id="quiz-form">
+        <div th:each="question, qStat : ${questions}" class="quiz-question">
+            <h3 th:text="${qStat.index + 1} + '.'"></h3>
+
+            <!-- Render each line as a <p> or <div> -->
+            <div th:each="line : ${question.lines}">
+                <p th:text="${line}"></p>
+            </div>
+
+            <div th:each="answer : ${question.answers}">
+                <label>
+                    <input type="radio"
+                           th:name="'q' + ${qStat.index + 1}"
+                           th:value="${answer}" />
+                    <span th:text="${answer}"></span>
+                </label><br>
+            </div>
+        </div>
+        <button type="submit">Submit Quiz</button>
+    </form>
+
+</div>
+
