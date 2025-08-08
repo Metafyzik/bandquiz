@@ -8,6 +8,9 @@ WORKDIR /app
 COPY pom.xml mvnw ./
 COPY .mvn .mvn
 
+# Give execute permission to the Maven wrapper
+RUN chmod +x mvnw
+
 # 4. Download dependencies (to use Docker caching)
 RUN ./mvnw dependency:go-offline
 
